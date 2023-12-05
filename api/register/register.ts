@@ -1,4 +1,5 @@
 import { sql } from '@vercel/postgres';
+import { NextResponse } from 'next/server';
  
 module.exports = async (req, res) => {
   const { firstname, lastname, email, additional } = req.body;
@@ -10,5 +11,5 @@ Additional_info) VALUES (${firstname}, ${lastname}, ${email}, ${additional});`;
   } catch (error) {
     return res.json({ error }, { status: 500 });
   }
-  return res.text("<h1>Success </h1>");
+  return res.NextResponse("<h1>Success </h1>");
 }
