@@ -10,5 +10,5 @@ Additional_info) VALUES (${firstname}, ${lastname}, ${email}, ${additional});`;
   } catch (error) {
     return res.json({ error }, { status: 500 });
   }
-  return res.sendFile('/success.html');
+  return res.body("<h1>Success </h1>");
 }
