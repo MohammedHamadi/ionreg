@@ -1,5 +1,4 @@
 import { sql } from '@vercel/postgres';
-import { NextResponse } from 'next/server';
  
 module.exports = async (req, res) => {
   const { firstname, lastname, email, additional } = req.body;
