@@ -11,5 +11,5 @@ Additional_info) VALUES (${firstname}, ${lastname}, ${email}, ${additional});`;
   } catch (error) {
     return res.json({ error }, { status: 500 });
   }
-  return res.NextResponse("<h1>Success </h1>");
+  return NextResponse.text("<h1>Success </h1>");
 }
