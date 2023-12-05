@@ -1,11 +1,12 @@
 import { sql } from '@vercel/postgres';
  
 module.exports = async (req, res) => {
-  const { name, email } = req.body;
+  const { firstname, lastname, emai, additional } = req.body;
  
   try {
-    if (!name || !email) throw new Error('Pet and owner names required');
-    await sql`INSERT INTO Pets (Name, Owner) VALUES (${name}, ${email});`;
+    if (!firstname || !email || !lastname || !additional) throw new Error('A required field is missing');
+    await sql`INSERT INTO formdata (First_name, Last_name, Email, 	
+Additional_info) VALUES (${firstname}, ${lastname}, ${email}, ${additional});`;
   } catch (error) {
     return res.json({ error }, { status: 500 });
   }
