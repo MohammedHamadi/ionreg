@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
     if (!firstname || !email || !lastname || !additional) throw new Error('A required field is missing');
     const result = await sql`INSERT INTO formdata (First_name, Last_name, Email, 	
 Additional_info) VALUES (${firstname}, ${lastname}, ${email}, ${additional});`;
-   return res.json({ result }, { status: 200 });
+   return res.json({ "success" }, { status: 200 });
   } catch (error) {
     return res.json({ error }, { status: 500 });
   }
