@@ -70,11 +70,11 @@ img{
 }*/
 /*=== Form ===*/
 .form{
-    height: 100vh;
     display: grid;
     justify-content: center;
     align-items: center;
     padding: 0 1rem;
+    margin-top: 20px;
 }
 .form__content{
     width: 290px;
@@ -209,6 +209,10 @@ img{
     margin-left: auto;
     margin-right: auto;
 }
+
+#additional {
+    height: 100px;
+}
 /*===== MEDIA QUERIS =====*/
 @media screen and (min-width: 968px){
 
@@ -228,5 +232,9 @@ img{
     .form__logo {
     margin: 10px;
     }
+
+    #additional {
+    height: 200px;
+}
 
 }
