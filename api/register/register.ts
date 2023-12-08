@@ -9,6 +9,6 @@ module.exports = async (req, res) => {
 Additional_info) VALUES (${firstname}, ${lastname}, ${email}, ${additional});`;
    return res.json({ 'Response Recorded': true, 'message for you': 'stay tuned' }, { status: 200 });
   } catch (error) {
-    return res.json({ error }, { status: 500 });
+    return res.json({ error }, { status: 500 }, { body : req.body});
   }
 }
