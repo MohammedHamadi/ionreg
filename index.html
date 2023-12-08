@@ -160,11 +160,15 @@
                         
                           // Create a FormData object from the form element
                           const formData = new FormData(form);
+                            const data = new URLSearchParams();
+                            for (const pair of new FormData) {
+                                data.append(pair[0], pair[1]);
+                            }
                         
                           // Use fetch to send an AJAX request with POST method and FormData as body
                           fetch('/api/register/register.ts', {
                             method: "POST",
-                            body: formData,
+                            body: data,
                             headers: {
                               "Content-Type": "multipart/form-data"
                             }
