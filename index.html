@@ -135,8 +135,8 @@
                         <span class="form__social-text">Our accounts</span>
 
                         <a href="#" class="form__social-icon"><i class='bx bxl-facebook' ></i></a>
-                        <a href="#" class="form__social-icon"><i class='bx bxl-google' ></i></a>
-                        <a href="#" class="form__social-icon"><i class='bx bxl-instagram' ></i></a>
+                        <a href="#" class="form__social-icon"><i class='bx bxl-discord' ></i></a>
+                        <a href="https://www.instagram.com/insideofnano/" class="form__social-icon"><i class='bx bxl-instagram' ></i></a>
                     </div>
                     
                 </form>
@@ -150,38 +150,6 @@
                         var item = items[Math.floor(Math.random()*items.length)];
                         document.querySelector('.quote__content').textContent = item;
                         document.querySelector('.quote__content__').textContent = item;
-
-                        /*const form = document.querySelector('.form__content');
-
-                        // Add a submit event handler to the form element
-                        form.addEventListener("submit", function(event) {
-                          // Prevent the default behavior of reloading the page
-                          event.preventDefault();
-                        
-                          // Create a FormData object from the form element
-                          const formData = new FormData(form);
-                            var object = Object.fromEntries(formData);
-                            var data = JSON.stringify(object);
-                        
-                          // Use fetch to send an AJAX request with POST method and FormData as body
-                          fetch('/api/register/register.ts', {
-                            method: "POST",
-                            body: data,
-                            headers: {
-                              "Content-Type": "multipart/form-data"
-                            }
-                          })
-                            .then(function(response) {
-                              alert("successful");
-                              return response.json();
-                            })
-                            .then(function(data) {
-                              console.log(data);
-                            })
-                            .catch(function(error) {
-                              console.error(error);
-                            });
-                        });*/
                 
             var b = false;
             var c = false;
