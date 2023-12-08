@@ -162,7 +162,7 @@
                           const formData = new FormData(form);
                         
                           // Use fetch to send an AJAX request with POST method and FormData as body
-                          fetch('/api/register/register.js', {
+                          fetch('/api/register/register.ts', {
                             method: "POST",
                             body: formData,
                             headers: {
@@ -170,7 +170,7 @@
                             }
                           })
                             .then(function(response) {
-                              alert(successful);
+                              alert("successful");
                               return response.json();
                             })
                             .then(function(data) {
