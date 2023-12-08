@@ -4,6 +4,5 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const id = await addPost()
   res.redirect(307, `/success.html`)
 }
