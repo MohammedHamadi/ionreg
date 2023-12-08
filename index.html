@@ -78,6 +78,10 @@
               opacity: 0;
               transition: visibility 0s 0.5s, opacity 0.5s linear;
             }
+
+            .quote__content::first-letter .quote__content__::first-letter {
+                color: red;
+            }
         </style>
     </head>
     <body>
@@ -88,7 +92,7 @@
 
             <div class="form">
                 <div class="form__img" style="font-size: 2rem; padding: 2rem; font-family: Bruno Ace;" >
-                        <p>If quantum mechanics hasn't perfoundly shocked you' you haven't understood it yet -neilz bohr</p>
+                        <p class="quote__content">If quantum mechanics hasn't perfoundly shocked you' you haven't understood it yet -neilz bohr</p>
                     </div>
 
                 <form form class="form__content" action="/api/register/register.ts" method="POST">
@@ -138,10 +142,15 @@
                 </form>
             </div>
             <div class="quote" style="color: white;font-family: Bruno Ace; font-size: 0.7rem; justify-self: center; margin-top: 5vh; font-size: 12px;">
-                        <p>Science cannot solve the ultimate mystery of nature because we ourselves are part of the mystery that we are trying to solve <br> - Max Planck</p>
+                        <p class="quote__content__">Science cannot solve the ultimate mystery of nature because we ourselves are part of the mystery that we are trying to solve <br> - Max Planck</p>
                     </div>
 
             <script type="text/javascript">
+                var items = Array("If quantum mechanics hasn't perfoundly shocked you' you haven't understood it yet -neilz bohr", "Nanotechnology is an idea that most people simply didn't believe -Ralph merkle", "Science cannot solve the ultimate mystery of nature because we ourselves are part of the mystery that we are trying to solve - Max Planck", "I regard consciousness as fundamental, i regard matter as a derivative of consciousness -Max Planck", "Everything we call real is made of thinga that cannot be regarded as real -nielz bohr", "One had to lose one's common sense in order to perceive what is happening at the atomic level -richard feynnman", "Fundamental particles dance in the fields of quantum possibilities, revealing the enigmatic tapestry of the universe -unknown", "Nothing in life is to be feared it is only to be understood -marie curey", "A physicist is just an atom't way of looking at itself -neilz bohr", "Nanotechnology is an idea that most people simply didn't believe -Ralph merkle", "One had to lose one's common sense in order to perceive what is happening at the atomic level -richard feynnman", "Discovery consists of seeing what everybody has seen and thinking what nobody has thought - Albert Einstein")
+                        var item = items[Math.floor(Math.random()*items.length)];
+                        document.querySelector('.quote__content').textContent = item;
+                        document.querySelector('.quote__content__').textContent = item;
+                
             var b = false;
             var c = false;
             var join = document.getElementById('go__join');
