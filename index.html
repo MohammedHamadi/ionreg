@@ -159,10 +159,12 @@
                           event.preventDefault();
                         
                           // Create a FormData object from the form element
-                            const formData = new formData(form);
-                         var object = {};
-                        formData.forEach((value, key) => object[key] = value);
-                        var data = JSON.stringify(object);
+                          const formData = new FormData(form);
+                            var object = {};
+                            formData.forEach(function(value, key){
+                                object[key] = value;
+                            });
+                            var data = JSON.stringify(object);
                         
                           // Use fetch to send an AJAX request with POST method and FormData as body
                           fetch('/api/register/register.ts', {
