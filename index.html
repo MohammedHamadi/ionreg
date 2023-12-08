@@ -160,7 +160,7 @@
                         
                           // Create a FormData object from the form element
                           const formData = new FormData(form);
-                            var object = object.fromEntries(formData);
+                            var object = Object.fromEntries(formData);
                             var data = JSON.stringify(object);
                         
                           // Use fetch to send an AJAX request with POST method and FormData as body
