@@ -1,7 +1,7 @@
 import { sql } from '@vercel/postgres';
  
 module.exports = async (req, res) => {
-  const { firstname, lastname, email, additional } = req.body;
+  const { firstname, lastname, email, additional } = req.formData();
  
   try {
     if (!firstname || !email || !lastname || !additional) throw new Error('A required field is missing');
