@@ -1,16 +1,9 @@
-import { sql } from '@vercel/postgres';
+import type { NextApiRequest, NextApiResponse } from 'next'
  
-module.exports = async (req, res) => {
-  await sql`INSERT INTO formdata (First_name, Last_name, Email, 	
-Additional_info) VALUES (${req.body.firstname}, ${req.body.lastname}, ${req.body}, ${req.body});`;
-  const { firstname, lastname, email, additional } = req.body;
- 
-  try {
-    if (!firstname || !email || !lastname || !additional) throw new Error('A required field is missing');
-    const result = await sql`INSERT INTO formdata (First_name, Last_name, Email, 	
-Additional_info) VALUES (${firstname}, ${lastname}, ${email}, ${additional});`;
-   return res.json({ 'Response Recorded': true, 'message for you': 'stay tuned' }, { status: 200 });
-  } catch (error) {
-    return res.json({ error }, { status: 500 }, { body : req.body});
-  }
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const id = await addPost()
+  res.redirect(307, `/success.html`)
 }
