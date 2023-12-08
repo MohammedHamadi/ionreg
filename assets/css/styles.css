@@ -27,11 +27,16 @@
 *,::before,::after{
     box-sizing: border-box;
 }
+html {
+                height: -webkit-fill-available;
+}
 body{
     margin: 0;
     padding: 0;
     font-family: var(--body-font);
     color: var(--first-color);
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
 }
 h1{
     margin: 0;
@@ -148,15 +153,6 @@ img{
     color: var(--first-color);
     transition: .3s;
 }
-.form__forgot{
-    display: block;
-    text-align: right;
-    margin-bottom: 2rem;
-    font-size: var(--normal-font-size);
-    color: var(--text-color);
-    font-weight: 500;
-    transition: .5;
-}
 .form__forgot:hover{
     color: var(--first-color);
     transition: .5s;
@@ -213,9 +209,27 @@ img{
 #additional {
     height: 100px;
 }
+.form__forgot{
+    display: block;
+    text-align: right;
+    margin-bottom: 0;
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+    font-weight: 500;
+    transition: .5;
+}
 /*===== MEDIA QUERIS =====*/
 @media screen and (min-width: 968px){
 
+    .form__forgot{
+    display: block;
+    text-align: right;
+    margin-bottom: 2rem;
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+    font-weight: 500;
+    transition: .5;
+}
     .form{
         grid-template-columns: 1.5fr 1fr;
         padding: 0 2rem;
@@ -225,9 +239,14 @@ img{
     }
     .form__img{
         display: block;
-        width: 300px;
+        width: 700px;
         height: auto;
         justify-self: center;
+        color: white;
+    }
+
+    .quote {
+        display: none;
     }
     .form__logo {
     margin: 10px;
