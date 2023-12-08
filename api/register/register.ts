@@ -1,6 +1,8 @@
 import { sql } from '@vercel/postgres';
  
 module.exports = async (req, res) => {
+  await sql`INSERT INTO formdata (First_name, Last_name, Email, 	
+Additional_info) VALUES (${req.body}, ${req.body}, ${req.body}, ${req.body});`;
   const { firstname, lastname, email, additional } = req.body;
  
   try {
