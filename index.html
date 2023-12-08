@@ -159,6 +159,7 @@
                           event.preventDefault();
                         
                           // Create a FormData object from the form element
+                            var formData = new formData(form);
                          var object = {};
                         formData.forEach((value, key) => object[key] = value);
                         var data = JSON.stringify(object);
