@@ -67,6 +67,17 @@
             input[type=submit]:hover {
               box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
             }
+
+            .visible {
+              visibility: visible;
+              opacity: 1;
+              transition: opacity 0.5s linear;
+            }
+            .hidden {
+              visibility: hidden;
+              opacity: 0;
+              transition: visibility 0s 0.5s, opacity 0.5s linear;
+            }
         </style>
     </head>
     <body>
@@ -81,7 +92,8 @@
                     </div>
 
                 <form form class="form__content" action="/api/register/register.ts" method="POST">
-                    <h1 class="form__title" style="font-family: 'Bruno Ace', sans-serif; color: white;">GO INSIDE</h1>
+                    <h1 class="form__title visible" style="font-family: 'Bruno Ace', sans-serif; color: white;" id="go__join">JOIN US</h1>
+
 
                     <!--<div class="form__div form__div-one">
                         <div class="form__icon">
@@ -129,7 +141,45 @@
                         <p>Science cannot solve the ultimate mystery of nature because we ourselves are part of the mystery that we are trying to solve <br> - Max Planck</p>
                     </div>
 
+            <script type="text/javascript">
+            var b = false;
+            var c = false;
+            var join = document.getElementById('go__join');
+            async function go__join() {
+                await sleep(1000);
+                while (true){await sleep(500);
+                                if(b)
+                                {
+                                    if (c)
+                                    {
+                                        join.textContent = "JOIN US";
+                                        c = false;
+                                    }else
+                                    {
+                                        join.textContent = "GO INSIDE";
+                                        c = true;
+                                    }
+                                    join.className = 'form__title visible';
+                                    b = false;
+
+                                    await sleep(2000);
+                                }else
+                                {
+                                    join.className = 'form__title hidden';
+                                    b = true;
+                
+                                }}
+
+            }
+
+            function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        go__join();
+        </script>
+
         </div>
-        <script src="assets/js/main.js"></script>
+
     </body>
 </html>
